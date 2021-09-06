@@ -6,21 +6,19 @@ close.addEventListener('click', closeClick);
 
 function burgerClick() {
     let mobileNav = document.querySelector('.mobile-nav');
-    mobileNav.classList.toggle('open');
+    mobileNav.classList.add('open');
 
     if (mobileNav.classList.contains('open')) {
         mobileNav.style.height += '100vh';
-    } else {
-        mobileNav.removeAttribute('style')
     }
 }
 
 function closeClick() {
     let mobileNav = document.querySelector('.mobile-nav');
-    mobileNav.classList.toggle('open');
+    mobileNav.classList.remove('open');
 
-    if (mobileNav.classList.contains('open')) {
-        burgerClick()
+    if (!mobileNav.classList.contains('open')) {
+        mobileNav.removeAttribute('style')
     }
 
 }
